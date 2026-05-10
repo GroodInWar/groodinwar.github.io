@@ -1,21 +1,172 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SkillBadge from "../components/SkillBadge.astro";
 
+const projects = [
+	{
+		title: "Incident Reporting System",
+		category: "Full-stack security project",
+		description:
+			"A three-tier incident reporting platform with reporter, analyst, and admin roles. Designed around secure workflows, report-to-incident transformation, file references, and a normalized MySQL database.",
+		tags: [".NET", "Blazor", "MySQL", "Security Design"],
+	},
+	{
+		title: "Docker Enterprise Network Lab",
+		category: "Cybersecurity lab",
+		description:
+			"A containerized network environment with clients, attackers, routers, DMZ servers, and an internal network for practicing routing, iptables, firewall rules, ARP testing, and traffic analysis.",
+		tags: ["Docker", "Linux", "iptables", "Networking"],
+	},
+	{
+		title: "Packet Sniffer",
+		category: "Systems and network programming",
+		description:
+			"A C-based packet capture project focused on live network inspection, interface selection, packet export, and low-level traffic analysis workflows.",
+		tags: ["C", "Npcap", "Wireshark", "Networking"],
+	},
+	{
+		title: "bcpwm Security Evaluation",
+		category: "Secure software analysis",
+		description:
+			"A secure software systems project involving password management, cloud synchronization, registration flows, threat modeling, and vulnerability analysis using STRIDE.",
+		tags: ["Threat Modeling", "STRIDE", "C++", "Security"],
+	},
+];
+
+const skills = [
+	"Cybersecurity",
+	"Secure Software Design",
+	"Linux",
+	"Docker",
+	"iptables",
+	"Wireshark",
+	"C",
+	"C++",
+	"Python",
+	"JavaScript",
+	"SQL / MySQL",
+	".NET / Blazor",
+	"Node.js",
+	"GitHub",
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home</title>
-	</head>
-	<body>
-		<h1>Gustavo Sakamoto de Toledo</h1>
-		<p>
-			Computer Science student focused on cybersecurity, secure software,
-			networking, databases, and full-stack development.
-		</p>
-	</body>
-</html>
+<Layout>
+	<header id="top" class="hero-section">
+		<Navbar />
+
+		<section class="hero-content section-container">
+			<p class="eyebrow">Computer Science • Cybersecurity • Secure Systems</p>
+			<h1>
+				Hi, I’m Gustavo. I build security-focused software and hands-on
+				networking labs.
+			</h1>
+			<p class="hero-summary">
+				I’m a Computer Science student focused on cybersecurity, secure software
+				development, networking, databases, and full-stack applications. My work
+				connects practical engineering with threat modeling, system design, and
+				real-world security problems.
+			</p>
+			<div class="hero-actions">
+				<a class="primary-button" href="#projects">View Projects</a>
+				<a
+					class="secondary-button"
+					href="/resume.pdf"
+					target="_blank"
+					rel="noreferrer">View Resume</a
+				>
+				<a
+					class="text-link"
+					href="https://github.com/groodinwar"
+					target="_blank"
+					rel="noreferrer">GitHub →</a
+				>
+			</div>
+		</section>
+	</header>
+
+	<main>
+		<section id="about" class="section-container split-section">
+			<div>
+				<p class="section-label">About</p>
+				<h2>Security-minded developer with a strong systems foundation.</h2>
+			</div>
+			<div class="section-copy">
+				<p>
+					I enjoy building projects that make security concepts concrete:
+					Docker-based lab networks, packet capture tools, firewall rule sets,
+					database-backed web applications, and secure software evaluations.
+				</p>
+				<p>
+					My current interests include incident reporting systems, network
+					defense, secure OS design, web application security, and practical
+					cybersecurity education through reproducible labs.
+				</p>
+			</div>
+		</section>
+
+		<section id="projects" class="section-container">
+			<div class="section-heading">
+				<p class="section-label">Featured Work</p>
+				<h2>Projects</h2>
+				<p>
+					A first snapshot of the technical work I want this portfolio to
+					highlight.
+				</p>
+			</div>
+
+			<div class="project-grid">
+				{projects.map((project) => <ProjectCard {...project} />)}
+			</div>
+		</section>
+
+		<section id="skills" class="section-container split-section">
+			<div>
+				<p class="section-label">Technical Stack</p>
+				<h2>Skills and tools</h2>
+			</div>
+			<div class="skills-wrap">
+				{skills.map((skill) => <SkillBadge name={skill} />)}
+			</div>
+		</section>
+
+		<section class="section-container highlight-panel">
+			<p class="section-label">What I’m building toward</p>
+			<h2>Portfolio focus</h2>
+			<p>
+				This website will grow into a professional portfolio with project
+				writeups, lab diagrams, source code links, resume updates, and technical
+				notes on cybersecurity, networking, and secure software engineering.
+			</p>
+		</section>
+
+		<section id="contact" class="section-container contact-section">
+			<p class="section-label">Contact</p>
+			<h2>Let’s connect.</h2>
+			<div class="contact-grid">
+				<a href="mailto:gustavosakamotox@gmail.com">
+					<span>Email</span>
+					gustavosakamotox@gmail.com
+				</a>
+				<a
+					href="https://github.com/groodinwar"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<span>GitHub</span>
+					github.com/groodinwar
+				</a>
+				<div>
+					<span>Location</span>
+					Ithaca, NY
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p>© 2026 Gustavo Sakamoto de Toledo. Built with Astro.</p>
+	</footer>
+</Layout>
