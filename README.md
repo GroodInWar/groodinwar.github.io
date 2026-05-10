@@ -7,3 +7,4 @@ This is the first version of Gustavo's personal portfolio website built with Ast
 ```bash
 npm install
 npm run dev
+```
