@@ -1,0 +1,294 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+
+const skillGroups = [
+  {
+    title: "Languages",
+    skills: ["C", "C++", "Python", "JavaScript", "TypeScript", "SQL", "C#"],
+  },
+  {
+    title: "Cybersecurity & Networking",
+    skills: [
+      "Threat Modeling",
+      "STRIDE",
+      "iptables",
+      "Wireshark",
+      "Packet Analysis",
+      "Network Segmentation",
+      "Firewall Rules",
+      "Secure Software Design",
+    ],
+  },
+  {
+    title: "Web & Database Development",
+    skills: [
+      ".NET",
+      "Blazor",
+      "Node.js",
+      "MySQL",
+      "Entity Framework",
+      "REST APIs",
+      "Database Design",
+      "E-R Modeling",
+    ],
+  },
+  {
+    title: "Systems & Tools",
+    skills: [
+      "Linux",
+      "Docker",
+      "Git",
+      "GitHub",
+      "Npcap",
+      "CLion",
+      "MySQL Workbench",
+      "GitHub Pages",
+    ],
+  },
+];
+
+const projects = [
+  {
+    name: "Incident Reporting System",
+    type: "Security-Focused Full-Stack Application",
+    bullets: [
+      "Designed a three-tier incident reporting platform with separate reporter, analyst, and administrator workflows.",
+      "Modeled a normalized MySQL database for users, roles, reports, incidents, comments, categories, and file references.",
+      "Structured the application so the frontend communicates with a backend API instead of directly accessing the database.",
+      "Built the core workflow around submitted reports being reviewed by analysts and transformed into formal incidents.",
+      "Applied secure design thinking to role separation, data flow, file relationships, and administrative access.",
+    ],
+  },
+  {
+    name: "Docker Enterprise Network Security Lab",
+    type: "Networking and Cybersecurity Lab",
+    bullets: [
+      "Designed a containerized enterprise-style network with attacker, client, router, DMZ, and internal network components.",
+      "Configured static routes and routing behavior across segmented Docker networks.",
+      "Practiced stateful iptables rules for controlling traffic between external, DMZ, and internal hosts.",
+      "Tested connectivity and filtering behavior using ping, telnet, Linux networking tools, and packet inspection workflows.",
+      "Used the lab to study firewall policy design, network segmentation, routing, and attacker movement constraints.",
+    ],
+  },
+  {
+    name: "Packet Sniffer",
+    type: "Systems and Network Programming",
+    bullets: [
+      "Built a C-based packet capture project for live network traffic inspection.",
+      "Worked with raw socket concepts, Npcap/libpcap-style capture workflows, interface selection, and packet export planning.",
+      "Configured a Windows development environment using CLion, CMake, MinGW, and packet capture libraries.",
+      "Used Wireshark to validate captured traffic and compare program output against real packet traces.",
+      "Explored low-level networking concepts including interfaces, packet formats, capture permissions, and traffic visibility.",
+    ],
+  },
+  {
+    name: "bcpwm Security Evaluation",
+    type: "Secure Software Systems Project",
+    bullets: [
+      "Evaluated a password management system using STRIDE threat modeling and secure software analysis.",
+      "Mapped system components, trust boundaries, cloud synchronization flows, local storage, and backend registration services.",
+      "Reviewed client-side and server-side components to identify design risks and potential implementation weaknesses.",
+      "Documented findings across system design, threat model, evaluation methodology, and security recommendations.",
+      "Connected architectural design decisions to concrete security properties such as authentication, data protection, and trust boundaries.",
+    ],
+  },
+  {
+    name: "Node.js and MySQL Web Application",
+    type: "Web Development and Database Project",
+    bullets: [
+      "Built a class web application using Node.js and MySQL.",
+      "Implemented server-side request handling, database-backed functionality, and form processing.",
+      "Added input validation and security-focused handling to reduce SQL injection and cross-site scripting risks.",
+      "Implemented logging and edge-case handling beyond the base project requirements.",
+      "Connected frontend behavior with backend routes and relational database operations.",
+    ],
+  },
+  {
+    name: "Resume Builder Automation",
+    type: "Python Automation Project",
+    bullets: [
+      "Designed a modular Python workflow for generating professional resume PDFs using structured input data.",
+      "Created a JSON-driven approach for representing resume sections, items, skills, and project descriptions.",
+      "Planned an automation pipeline that can parse profile inputs, generate intermediate JSON, and produce final PDFs.",
+      "Used ReportLab concepts to separate resume content from resume layout and formatting logic.",
+    ],
+  },
+];
+
+const experience = [
+  {
+    role: "Vice President",
+    organization: "GopherHack",
+    bullets: [
+      "Supported a cybersecurity-focused student organization through technical discussion, community engagement, and student learning initiatives.",
+      "Helped create an environment for students to explore security concepts, hacking topics, and hands-on technical practice.",
+      "Developed leadership, communication, and collaboration skills in a technical student group setting.",
+    ],
+  },
+  {
+    role: "Desk Assistant",
+    organization: "University of Minnesota",
+    bullets: [
+      "Supported front-desk operations and student-facing services in a university environment.",
+      "Assisted students and visitors with questions, logistics, and issue resolution.",
+      "Built communication, organization, and troubleshooting skills while balancing operational responsibilities.",
+    ],
+  },
+  {
+    role: "Barista",
+    organization: "Customer Service Role",
+    bullets: [
+      "Provided customer service in a fast-paced environment requiring multitasking, communication, and attention to detail.",
+      "Worked as part of a team to maintain service quality, handle requests, and support daily operations.",
+      "Developed reliability, time management, and customer-facing problem-solving skills.",
+    ],
+  },
+];
+---
+
+<Layout
+  title="Resume | Gustavo Sakamoto de Toledo"
+  description="Resume page for Gustavo Sakamoto de Toledo, a computer science student focused on cybersecurity, secure software, networking, databases, and full-stack development."
+>
+  <header class="subpage-hero">
+    <Navbar />
+
+    <section class="section-container resume-hero">
+      <p class="eyebrow">Resume</p>
+      <h1>
+        Computer Science student building secure software, network labs, and
+        database-backed applications.
+      </h1>
+      <p class="hero-summary">
+        My work focuses on cybersecurity, secure software design, networking,
+        databases, and full-stack development. I use this portfolio to document
+        practical projects, lab environments, and systems that connect theory
+        with real security and engineering problems.
+      </p>
+
+      <div class="hero-actions">
+        <a
+          class="primary-button"
+          href="/resume.pdf"
+          target="_blank"
+          rel="noreferrer">Download PDF Resume</a
+        >
+        <a class="secondary-button" href="mailto:gustavosakamotox@gmail.com"
+          >Contact Me</a
+        >
+      </div>
+    </section>
+  </header>
+
+  <main class="resume-main">
+    <section class="section-container resume-document">
+      <div class="resume-header">
+        <div>
+          <h2>Gustavo Sakamoto de Toledo</h2>
+          <p>Computer Science • Cybersecurity • Secure Software • Networking</p>
+        </div>
+
+        <div class="resume-contact-list">
+          <a href="mailto:gustavosakamotox@gmail.com"
+            >gustavosakamotox@gmail.com</a
+          >
+          <a
+            href="https://github.com/groodinwar"
+            target="_blank"
+            rel="noreferrer">github.com/groodinwar</a
+          >
+          <span>Ithaca, NY</span>
+        </div>
+      </div>
+
+      <section class="resume-section">
+        <h3>Profile</h3>
+        <p>
+          Computer Science student focused on cybersecurity, secure software
+          engineering, networking, databases, and full-stack development.
+          Experienced with building security-themed applications, Docker-based
+          lab networks, packet analysis tools, MySQL-backed systems, and threat
+          modeling documentation. Interested in roles that combine software
+          development, systems thinking, and practical security work.
+        </p>
+      </section>
+
+      <section class="resume-section">
+        <h3>Education</h3>
+        <div class="resume-item">
+          <div class="resume-item-heading">
+            <h4>University of Minnesota — Twin Cities</h4>
+            <span>Computer Science</span>
+          </div>
+          <p>
+            Undergraduate degree in Computer Science with coursework and
+            projects involving databases, networking, secure software systems,
+            web development, systems programming, and software engineering.
+          </p>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h3>Technical Skills</h3>
+
+        <div class="resume-skill-grid">
+          {
+            skillGroups.map((group) => (
+              <div class="resume-skill-card">
+                <h4>{group.title}</h4>
+                <pre> • {group.skills.join("\n • ")}</pre>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h3>Selected Projects</h3>
+
+        <div class="resume-list">
+          {
+            projects.map((project) => (
+              <article class="resume-item">
+                <div class="resume-item-heading">
+                  <h4>{project.name}</h4>
+                  <span>{project.type}</span>
+                </div>
+
+                <ul>
+                  {project.bullets.map((bullet) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h3>Experience</h3>
+
+        <div class="resume-list">
+          {
+            experience.map((item) => (
+              <article class="resume-item">
+                <div class="resume-item-heading">
+                  <h4>{item.role}</h4>
+                  <span>{item.organization}</span>
+                </div>
+
+                <ul>
+                  {item.bullets.map((bullet) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+    </section>
+  </main>
+</Layout>

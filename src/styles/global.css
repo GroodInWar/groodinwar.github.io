@@ -360,4 +360,165 @@ main {
   .project-card {
     min-height: auto;
   }
+
+  .subpage-hero {
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 32rem),
+      var(--bg);
+  }
+
+  .resume-hero {
+    padding: 5rem 0 6rem;
+  }
+
+  .resume-main {
+    padding: 4rem 0 6rem;
+  }
+
+  .resume-document {
+    padding: 2rem;
+    border: 1px solid var(--line);
+    border-radius: 1.5rem;
+    background: rgba(15, 23, 42, 0.72);
+    box-shadow: var(--shadow);
+  }
+
+  .resume-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .resume-header h2 {
+    margin-bottom: 0.35rem;
+  }
+
+  .resume-header p {
+    margin-bottom: 0;
+    color: var(--muted-strong);
+  }
+
+  .resume-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    color: var(--muted-strong);
+    text-align: right;
+  }
+
+  .resume-contact-list a {
+    color: var(--muted-strong);
+    text-decoration: none;
+  }
+
+  .resume-contact-list a:hover {
+    color: var(--accent);
+  }
+
+  .resume-section {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .resume-section:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .resume-section h3 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .resume-section p {
+    color: var(--muted-strong);
+  }
+
+  .resume-list {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .resume-item {
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: rgba(2, 6, 23, 0.35);
+  }
+
+  .resume-item-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .resume-item-heading h4 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .resume-item-heading span {
+    color: var(--muted);
+    font-size: 0.95rem;
+    text-align: right;
+  }
+
+  .resume-item ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--muted-strong);
+  }
+
+  .resume-item li+li {
+    margin-top: 0.45rem;
+  }
+
+  .resume-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .resume-skill-card {
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: rgba(2, 6, 23, 0.35);
+  }
+
+  .resume-skill-card h4 {
+    margin: 0 0 0.5rem;
+  }
+
+  .resume-skill-card p {
+    margin: 0;
+  }
+
+  @media (max-width: 760px) {
+
+    .resume-header,
+    .resume-item-heading {
+      flex-direction: column;
+    }
+
+    .resume-contact-list,
+    .resume-item-heading span {
+      text-align: left;
+    }
+
+    .resume-skill-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .resume-document {
+      padding: 1.25rem;
+    }
+  }
 }
