@@ -329,6 +329,8 @@ main {
 }
 
 .site-footer {
+  display: flex;
+  flex-direction: column;
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 2rem 0 3rem;
@@ -337,6 +339,7 @@ main {
 }
 
 .site-footer p {
+  text-align: center;
   margin: 0;
 }
 
