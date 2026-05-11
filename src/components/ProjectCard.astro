@@ -4,10 +4,12 @@ interface Props {
   category: string;
   description: string;
   tags: string[];
+  href?: string;
 }
 
-const { title, category, description, tags } = Astro.props;
+const { title, category, description, tags, href } = Astro.props;
 ---
+
 <article class="project-card">
   <p class="project-category">{category}</p>
   <h3>{title}</h3>
@@ -15,4 +17,11 @@ const { title, category, description, tags } = Astro.props;
   <div class="tag-row" aria-label={`${title} technologies`}>
     {tags.map((tag) => <span>{tag}</span>)}
   </div>
+  {
+    href && (
+      <a href={href} class="project-link" aria-label={`View ${title}`}>
+        View Project
+      </a>
+    )
+  }
 </article>

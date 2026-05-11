@@ -1,0 +1,246 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+
+const technologies = [
+  ".NET",
+  "Blazor",
+  "MySQL",
+  "Entity Framework",
+  "REST APIs",
+  "E-R Modeling",
+  "Role-Based Access",
+  "Three-Tier Architecture",
+];
+
+const features = [
+  {
+    title: "Role-based workflows",
+    description:
+      "The system separates regular users, analysts, and administrators so each user type interacts with the application through a distinct workflow.",
+  },
+  {
+    title: "Report-to-incident process",
+    description:
+      "Users submit reports, analysts review those reports, and formal incidents are created from validated or investigated report data.",
+  },
+  {
+    title: "Normalized database design",
+    description:
+      "The database design separates users, roles, reports, incidents, categories, comments, and file references into structured relational tables.",
+  },
+  {
+    title: "Backend-mediated database access",
+    description:
+      "The frontend communicates with the backend API instead of directly accessing the database, preserving a cleaner three-tier architecture.",
+  },
+];
+
+const securityConcepts = [
+  "Role separation",
+  "Least privilege",
+  "Data flow control",
+  "Input validation",
+  "File reference handling",
+  "Administrative access control",
+  "Database normalization",
+  "Frontend/backend trust boundary",
+];
+---
+
+<Layout
+  title="Incident Reporting System | Gustavo Sakamoto de Toledo"
+  description="Case study for Gustavo Sakamoto de Toledo's Incident Reporting System project, a security-focused full-stack application using .NET, Blazor, and MySQL."
+>
+  <header class="subpage-hero">
+    <Navbar />
+
+    <section class="section-container project-hero">
+      <p class="eyebrow">Project Case Study</p>
+      <h1>Incident Reporting System</h1>
+      <p class="hero-summary">
+        A security-focused full-stack application designed around report
+        submission, analyst review, incident creation, role separation, and
+        database-backed workflows.
+      </p>
+
+      <div class="hero-actions">
+        <a class="primary-button" href="#architecture">View Architecture</a>
+        <a class="secondary-button" href="/#projects">Back to Projects</a>
+      </div>
+    </section>
+  </header>
+
+  <main class="project-page-main">
+    <section class="section-container project-overview-grid">
+      <div class="project-overview-card">
+        <span>Project Type</span>
+        <strong>Full-Stack Security Application</strong>
+      </div>
+
+      <div class="project-overview-card">
+        <span>Focus</span>
+        <strong>Incident Reporting, Access Control, Database Design</strong>
+      </div>
+
+      <div class="project-overview-card">
+        <span>Architecture</span>
+        <strong>Frontend → Backend API → MySQL Database</strong>
+      </div>
+    </section>
+
+    <section class="section-container project-case-section">
+      <div class="case-section-heading">
+        <br />
+        <p class="section-label">Overview</p>
+        <h2>What the system does</h2>
+      </div>
+
+      <div class="case-section-copy">
+        <p>
+          The Incident Reporting System is a security-themed web application
+          where users can submit reports, analysts can review those reports and
+          transform them into incidents, and administrators can manage
+          system-level data.
+        </p>
+
+        <p>
+          The project focuses on building a realistic workflow for incident
+          handling while keeping the architecture clean: the frontend sends
+          requests to a backend API, and the backend handles database operations
+          with MySQL.
+        </p>
+      </div>
+    </section>
+
+    <section id="architecture" class="section-container project-case-section">
+      <div class="case-section-heading">
+        <p class="section-label">Architecture</p>
+        <h2>Three-tier structure</h2>
+      </div>
+
+      <div class="architecture-flow">
+        <div>
+          <span>→ Client Tier |</span>
+          <strong>Reporter / Analyst / Admin UI</strong>
+          <p>
+            Users interact with the system through role-specific frontend views.
+          </p>
+        </div>
+
+        <div>
+          <span>→ Application Tier |</span>
+          <strong>Backend API</strong>
+          <p>
+            The backend processes requests, applies business rules, and controls
+            database access.
+          </p>
+        </div>
+        <div>
+          <span>→ Data Tier |</span>
+          <strong>MySQL Database</strong>
+          <p>
+            The database stores users, reports, incidents, comments, categories,
+            and file references.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-container project-case-section">
+      <div class="case-section-heading">
+        <p class="section-label">Core Features</p>
+        <h2>Main functionality</h2>
+      </div>
+
+      <div class="feature-grid">
+        {
+          features.map((feature) => (
+            <article class="feature-card">
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section-container project-case-section">
+      <div class="case-section-heading">
+        <p class="section-label">Database Design</p>
+        <h2>Relational model focus</h2>
+      </div>
+
+      <div class="case-section-copy">
+        <p>
+          The database design was built around normalized entities and
+          relationships. Important entities include users, roles, reports,
+          incidents, categories, comments, and file references.
+        </p>
+
+        <p>
+          One important design choice was keeping user roles in a single users
+          table while using role values to distinguish regular users, analysts,
+          and administrators. Reports can reference multiple files, and
+          incidents can reference files beyond a single report when needed.
+        </p>
+
+        <div class="schema-box">
+          <code>
+            users → reports → incidents<br />
+            users → comments → incidents<br />
+            reports → files<br />
+            incidents → files<br />
+            incidents → categories
+          </code>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-container project-case-section">
+      <div class="case-section-heading">
+        <br />
+        <p class="section-label">Security Thinking</p>
+        <h2>Security concepts applied</h2>
+      </div>
+
+      <div class="security-list">
+        {securityConcepts.map((concept) => <span>{concept}</span>)}
+      </div>
+    </section>
+
+    <section class="section-container project-case-section">
+      <div class="case-section-heading">
+        <br />
+        <p class="section-label">What I Learned</p>
+        <h2>Technical takeaways</h2>
+      </div>
+
+      <div class="case-section-copy">
+        <p>
+          This project strengthened my understanding of how application
+          architecture, database design, and security requirements affect each
+          other. Separating frontend behavior from backend database access made
+          the system easier to reason about and safer to extend.
+        </p>
+
+        <p>
+          The project also helped me practice translating an E-R model into a
+          working schema, thinking through role-based workflows, and designing
+          around real incident management behavior instead of only basic CRUD
+          operations.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-container project-tech-panel">
+      <br />
+      <p class="section-label">Technologies</p>
+      <h2>Tools and concepts used</h2>
+
+      <div class="skills-wrap">
+        {technologies.map((tech) => <span class="skill-badge">{tech}</span>)}
+      </div>
+    </section>
+  </main>
+</Layout>
