@@ -8,9 +8,6 @@ import Footer from "../components/Footer.astro";
 const linkedinProfileUrl =
 	"https://www.linkedin.com/in/gustavo-sakamoto-de-toledo/";
 
-const researchPaperUrl =
-	"https://www.linkedin.com/in/gustavo-sakamoto-de-toledo/overlay/Project/946097480/treasury/?profileId=ACoAADvQK74BeOIC7J6Hi8fm9KAUlYkVc5nFXHk";
-
 const projects = [
 	{
 		title: "Incident Reporting System",
@@ -21,12 +18,12 @@ const projects = [
 		href: "/projects/incident-reporting-system",
 	},
 	{
-		title: "Research Paper",
-		category: "Academic research and technical writing",
+		title: "Password Manager Authentication Decentralization",
+		category: "Cybersecurity research paper",
 		description:
-			"A research paper completed during my last semester, highlighting my ability to investigate technical topics, synthesize findings, and communicate complex ideas in a structured academic format.",
-		tags: ["Research", "Technical Writing", "Analysis", "Academic Writing"],
-		href: "/projects/research-paper",
+			"A cybersecurity research paper analyzing how traditional password managers create a single point of failure through master-password-based vault access. The paper applies STRIDE threat modeling and proposes a decentralized 3FA framework that separates vault access from credential decryption to reduce breach risk while preserving usability.",
+		tags: ["STRIDE", "3FA", "Password Managers", "Threat Modeling"],
+		href: "/projects/password-manager-authentication-decentralization",
 	},
 	{
 		title: "Docker Enterprise Network Lab",
